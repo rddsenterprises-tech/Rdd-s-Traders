@@ -1,1297 +1,1090 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RDD's Trader - Custom Neon Signs & Wall Decor</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@400;600;800;900&family=Outfit:wght@300;400;500;600;700&family=Pacifico&family=Press+Start+2P&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Tailwind Configuration -->
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            neonCyan: '#00f3ff',
-            neonPink: '#ff007f',
-            neonYellow: '#ffe600',
-            neonGreen: '#00ff66',
-            neonPurple: '#b026ff',
-            darkBg: '#090a0f',
-            darkCard: '#12141d',
-            darkNav: '#0d0e15'
-          },
-          fontFamily: {
-            sans: ['Outfit', 'sans-serif'],
-            display: ['Orbitron', 'sans-serif'],
-            monoton: ['Monoton', 'cursive'],
-            pacifico: ['Pacifico', 'cursive'],
-            rockSalt: ['Rock Salt', 'cursive'],
-            pressStart: ['"Press Start 2P"', 'cursive'],
-            satisfy: ['Satisfy', 'cursive']
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDD's Trader - Custom LED Neon Signs & Decor</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0b0f19',
+                            card: '#111827',
+                            primary: '#ec4899', // Neon Pink
+                            cyan: '#06b6d4',    // Neon Cyan
+                            gold: '#f59e0b',    // Neon Gold
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        cursive: ['Dancing Script', 'cursive'],
+                        modern: ['Montserrat', 'sans-serif'],
+                        neon: ['Pacifico', 'cursive'],
+                        script: ['Great Vibes', 'cursive']
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-
-  <style>
-    /* Custom Neon Glow Utilities */
-    .neon-text-cyan {
-      text-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff, 0 0 20px #00f3ff, 0 0 40px #00f3ff;
-    }
-    .neon-text-pink {
-      text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #ff007f;
-    }
-    .neon-text-yellow {
-      text-shadow: 0 0 5px #ffe600, 0 0 10px #ffe600, 0 0 20px #ffe600;
-    }
-    .neon-border-cyan {
-      box-shadow: 0 0 10px rgba(0, 243, 255, 0.4), inset 0 0 10px rgba(0, 243, 255, 0.2);
-    }
-    .neon-border-pink {
-      box-shadow: 0 0 10px rgba(255, 0, 127, 0.4), inset 0 0 10px rgba(255, 0, 127, 0.2);
-    }
-    .neon-box-glow {
-      box-shadow: 0 0 20px rgba(0, 243, 255, 0.25), 0 0 40px rgba(255, 0, 127, 0.15);
-    }
+    </script>
+    <!-- Google Fonts for Neon Preview -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Inter:wght@400;600;700;800&family=Montserrat:wght@800&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    /* Scrollbar Styling */
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #090a0f;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1f2333;
-      border-radius: 3px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #00f3ff;
-    }
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
 
-    /* Background Acrylic Wall Texture Effect */
-    .brick-wall-bg {
-      background-color: #090a0f;
-      background-image: 
-        radial-gradient(circle at 50% 50%, rgba(20, 24, 40, 0.8) 0%, rgba(9, 10, 15, 1) 100%),
-        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 100% 100%, 40px 40px, 40px 40px;
-    }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
-    /* Pulsing animations */
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 1; filter: drop-shadow(0 0 15px currentColor); }
-      50% { opacity: 0.85; filter: drop-shadow(0 0 5px currentColor); }
-    }
-    .pulse-neon {
-      animation: pulseGlow 2.5s infinite ease-in-out;
-    }
+        .neon-preview-container {
+            background: radial-gradient(circle at center, #1f293d 0%, #0b0f19 100%);
+            border: 2px dashed rgba(236, 72, 153, 0.3);
+        }
 
-    /* Font Family Helpers for Generator */
-    .font-orbitron { font-family: 'Orbitron', sans-serif; }
-    .font-monoton { font-family: 'Monoton', cursive; }
-    .font-pacifico { font-family: 'Pacifico', cursive; }
-    .font-rocksalt { font-family: 'Rock Salt', cursive; }
-    .font-pressstart { font-family: 'Press Start 2P', cursive; }
-    .font-satisfy { font-family: 'Satisfy', cursive; }
-  </style>
+        .glow-pink {
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ec4899, 0 0 30px #ec4899, 0 0 40px #ec4899, 0 0 55px #ec4899;
+        }
+        .glow-cyan {
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #06b6d4, 0 0 30px #06b6d4, 0 0 40px #06b6d4, 0 0 55px #06b6d4;
+        }
+        .glow-warm {
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #f59e0b, 0 0 30px #f59e0b, 0 0 40px #f59e0b, 0 0 55px #f59e0b;
+        }
+        .glow-white {
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #e5e7eb, 0 0 20px #d1d5db, 0 0 30px #9ca3af;
+        }
+        .glow-purple {
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #a855f7, 0 0 30px #a855f7, 0 0 40px #a855f7, 0 0 55px #a855f7;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0b0f19; }
+        ::-webkit-scrollbar-thumb { background: #1f293d; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ec4899; }
+    </style>
 </head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-pink-500 selection:text-white">
 
-<body class="brick-wall-bg text-slate-100 min-h-screen flex flex-col font-sans antialiased pb-20 md:pb-0 selection:bg-neonPink selection:text-white">
-
-  <div class="bg-gradient-to-r from-neonPink via-neonPurple to-neonCyan text-black font-semibold text-xs md:text-sm py-2 px-4 text-center tracking-wide shadow-lg">
-    <span class="inline-block animate-bounce mr-1">🔥</span> 
-    <strong>RDD's TRADER SALE:</strong> GET FREE SHIPPING ON ORDERS OVER RS. 4,999! 
-    <span class="hidden sm:inline">| CASH ON DELIVERY AVAILABLE ALL OVER PAKISTAN 🇵🇰</span>
-  </div>
-
-  <header class="sticky top-0 z-40 bg-darkNav/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300" id="mainHeader">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 md:h-20">
-        
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobileMenuBtn" class="md:hidden text-slate-300 hover:text-neonCyan p-2 rounded-lg focus:outline-none">
-          <i class="fa-solid fa-bars-staggered text-xl"></i>
-        </button>
-
-        <!-- Brand Logo -->
-        <a href="#" class="flex items-center gap-2 group">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neonPink to-neonCyan p-0.5 shadow-lg shadow-neonCyan/20 group-hover:shadow-neonPink/40 transition-all duration-300">
-            <div class="w-full h-full bg-darkBg rounded-[10px] flex items-center justify-center">
-              <span class="font-display font-black text-xl text-neonCyan group-hover:text-neonPink transition-colors">R</span>
-            </div>
-          </div>
-          <div class="flex flex-col">
-            <span class="font-display font-black text-lg sm:text-2xl tracking-wider text-white group-hover:text-neonCyan transition-colors">
-              RDD'S <span class="text-neonPink group-hover:text-white">TRADER</span>
-            </span>
-            <span class="text-[9px] tracking-widest text-slate-400 font-mono -mt-1 uppercase">Light Up Your Space</span>
-          </div>
-        </a>
-
-        <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
-          <a href="#home" class="text-neonCyan hover:text-white transition-colors py-1 border-b-2 border-neonCyan">Home</a>
-          <a href="#customizer" class="text-slate-300 hover:text-neonPink transition-colors py-1 flex items-center gap-1.5">
-            <i class="fa-solid fa-wand-magic-sparkles text-neonPink animate-pulse"></i> Custom Neon
-          </a>
-          <a href="#shop" class="text-slate-300 hover:text-neonCyan transition-colors py-1">Shop All</a>
-          <a href="#categories" class="text-slate-300 hover:text-neonCyan transition-colors py-1">Categories</a>
-          <a href="#about" class="text-slate-300 hover:text-neonCyan transition-colors py-1">Why Us</a>
-        </nav>
-
-        <!-- Right Header Action Icons -->
-        <div class="flex items-center gap-3">
-          <!-- Search Bar Toggle Button -->
-          <button id="searchToggleBtn" class="p-2.5 text-slate-300 hover:text-neonCyan hover:bg-slate-800/60 rounded-full transition-all">
-            <i class="fa-solid fa-magnifying-glass text-lg"></i>
-          </button>
-
-          <!-- Cart Button with Counter -->
-          <button id="cartBtn" class="relative p-2.5 text-slate-300 hover:text-neonPink hover:bg-slate-800/60 rounded-full transition-all">
-            <i class="fa-solid fa-bag-shopping text-xl"></i>
-            <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-neonPink text-white font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center shadow-md shadow-neonPink/50 border border-darkBg">0</span>
-          </button>
-          
-          <!-- Quick WhatsApp Direct Header Button -->
-          <a href="https://wa.me/923042178799?text=Hi%20RDD's%20Trader!%20I%20have%20an%20inquiry%20about%20a%20neon%20sign." target="_blank" class="hidden sm:flex items-center gap-2 bg-emerald-600/20 text-emerald-400 border border-emerald-500/40 hover:bg-emerald-600 hover:text-white px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all shadow-sm">
-            <i class="fa-brands fa-whatsapp text-sm"></i> Direct Chat
-          </a>
-        </div>
-      </div>
+    <div class="bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 text-white text-xs md:text-sm font-semibold py-2 px-4 text-center shadow-lg">
+        <span><i class="fa-solid fa-truck-fast mr-2"></i> Free Shipping on Orders over Rs. 4,999 | Cash On Delivery Available All Over Pakistan!</span>
     </div>
 
-    <!-- Collapsible Search Bar Header Overlay -->
-    <div id="searchOverlay" class="hidden bg-darkCard/95 border-b border-slate-800 p-4 transition-all">
-      <div class="max-w-3xl mx-auto flex items-center gap-3">
-        <i class="fa-solid fa-magnifying-glass text-neonCyan text-lg"></i>
-        <input type="text" id="searchInput" placeholder="Search Neon Signs, Acrylic Calligraphy, Gaming Logos..." class="w-full bg-slate-900/80 border border-slate-700 focus:border-neonCyan text-white text-sm rounded-lg px-4 py-2.5 outline-none font-sans">
-        <button id="closeSearchBtn" class="text-slate-400 hover:text-white p-2">
-          <i class="fa-solid fa-xmark text-lg"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Drawer Navigation -->
-    <div id="mobileMenuDrawer" class="hidden md:hidden bg-darkNav border-b border-slate-800 px-6 py-4 space-y-3">
-      <a href="#home" class="block text-neonCyan font-medium text-base py-2">Home</a>
-      <a href="#customizer" class="block text-slate-200 hover:text-neonPink font-medium text-base py-2 flex items-center gap-2">
-        <i class="fa-solid fa-wand-magic-sparkles text-neonPink"></i> Create Custom Neon
-      </a>
-      <a href="#shop" class="block text-slate-200 hover:text-neonCyan font-medium text-base py-2">Catalog & Products</a>
-      <a href="#categories" class="block text-slate-200 hover:text-neonCyan font-medium text-base py-2">Browse Categories</a>
-      <a href="#reviews" class="block text-slate-200 hover:text-neonCyan font-medium text-base py-2">Customer Reviews</a>
-      <div class="pt-2 border-t border-slate-800">
-        <a href="https://wa.me/923001234567" target="_blank" class="w-full flex items-center justify-center gap-2 bg-emerald-600 text-white font-medium py-2.5 rounded-lg text-sm">
-          <i class="fa-brands fa-whatsapp text-lg"></i> Contact on WhatsApp
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <main class="flex-grow">
-    
-    <section id="home" class="relative overflow-hidden pt-6 pb-12 md:py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Hero Slider Frame -->
-        <div class="relative rounded-2xl overflow-hidden border border-slate-800 bg-darkCard/60 neon-box-glow">
-          <div id="heroSlider" class="flex transition-transform duration-700 ease-out">
-            
-            <!-- Slide 1: Custom Neon Generator Highlight -->
-            <div class="min-w-full relative flex flex-col md:flex-row items-center p-6 md:p-12 lg:p-16 bg-gradient-to-r from-slate-950 via-slate-900 to-indigo-950/80">
-              <div class="w-full md:w-1/2 space-y-4 md:space-y-6 z-10 text-center md:text-left">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-neonPink/10 text-neonPink border border-neonPink/30 uppercase tracking-widest">
-                  <i class="fa-solid fa-bolt text-xs"></i> 100% Customizable
-                </span>
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-tight">
-                  DESIGN YOUR OWN <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-neonCyan via-neonPurple to-neonPink neon-text-cyan">NEON SIGN</span>
-                </h1>
-                <p class="text-slate-300 text-sm sm:text-base max-w-lg font-light leading-relaxed">
-                  Transform your bedroom, cafe, or gaming studio with custom glowing LED text & neon artwork. Premium acrylic backing & energy efficient.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 pt-2">
-                  <a href="#customizer" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-neonPink to-neonPurple text-white font-bold text-sm tracking-wide shadow-lg shadow-neonPink/30 hover:scale-105 transition-all text-center">
-                    <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Start Designing Now
-                  </a>
-                  <a href="#shop" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-white font-semibold text-sm transition-all text-center">
-                    Browse Ready Signs
-                  </a>
+    <header class="sticky top-0 z-40 glass-card border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <button onclick="navigateTo('home')" class="flex items-center gap-3 text-left">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-pink-500 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-pink-500/30">
+                    <i class="fa-solid fa-bolt text-xl animate-pulse"></i>
                 </div>
-              </div>
-
-              <!-- Slide 1 Visual Graphic -->
-              <div class="w-full md:w-1/2 mt-8 md:mt-0 flex justify-center items-center relative">
-                <div class="absolute -inset-4 bg-neonPink/20 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="p-8 rounded-2xl bg-black/60 border border-slate-800 text-center relative z-10 w-full max-w-sm">
-                  <p class="font-pacifico text-4xl sm:text-5xl text-neonPink neon-text-pink mb-2 pulse-neon">Good Vibes Only</p>
-                  <p class="text-xs text-slate-400 font-mono tracking-widest uppercase mt-4">Starting at Rs. 2,999</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 2: Islamic Calligraphy Collection -->
-            <div class="min-w-full relative flex flex-col md:flex-row items-center p-6 md:p-12 lg:p-16 bg-gradient-to-r from-slate-950 via-slate-900 to-emerald-950/80">
-              <div class="w-full md:w-1/2 space-y-4 md:space-y-6 z-10 text-center md:text-left">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-neonCyan/10 text-neonCyan border border-neonCyan/30 uppercase tracking-widest">
-                  <i class="fa-solid fa-moon"></i> Islamic Art Collection
-                </span>
-                <h2 class="text-3xl sm:text-5xl font-display font-black text-white leading-tight">
-                  GLOWING <br><span class="text-neonCyan neon-text-cyan">ISLAMIC ACRYLIC</span> CALLIGRAPHY
-                </h2>
-                <p class="text-slate-300 text-sm sm:text-base max-w-lg font-light">
-                  Elegant Ayat ul Kursi, Bismillah, and MashAllah LED neon wall frames designed for homes and modern offices.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 pt-2">
-                  <button onclick="filterCategory('Islamic Signs')" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-neonCyan text-black font-bold text-sm shadow-lg shadow-neonCyan/30 hover:scale-105 transition-all">
-                    Explore Islamic Signs
-                  </button>
-                </div>
-              </div>
-
-              <!-- Slide 2 Visual Graphic -->
-              <div class="w-full md:w-1/2 mt-8 md:mt-0 flex justify-center items-center">
-                <div class="p-8 rounded-2xl bg-black/60 border border-slate-800 text-center relative z-10 w-full max-w-sm">
-                  <p class="font-sans font-bold text-3xl sm:text-4xl text-neonCyan neon-text-cyan mb-2">بِسْمِ ٱللَّٰهِ</p>
-                  <p class="text-xs text-slate-300 font-mono tracking-widest uppercase mt-2">Bismillah Neon Frame</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 3: Gaming Room Decor -->
-            <div class="min-w-full relative flex flex-col md:flex-row items-center p-6 md:p-12 lg:p-16 bg-gradient-to-r from-slate-950 via-slate-900 to-purple-950/80">
-              <div class="w-full md:w-1/2 space-y-4 md:space-y-6 z-10 text-center md:text-left">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-neonYellow/10 text-neonYellow border border-neonYellow/30 uppercase tracking-widest">
-                  <i class="fa-solid fa-gamepad"></i> Gaming Setup Upgrades
-                </span>
-                <h2 class="text-3xl sm:text-5xl font-display font-black text-white leading-tight">
-                  LEVEL UP YOUR <br><span class="text-neonYellow neon-text-yellow">GAMING SETUP</span>
-                </h2>
-                <p class="text-slate-300 text-sm sm:text-base max-w-lg font-light">
-                  Controller lights, anime logos, streaming tag signs & cyber wall clocks. Make your setup stream-ready!
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 pt-2">
-                  <button onclick="filterCategory('Gaming Signs')" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-neonYellow text-black font-bold text-sm shadow-lg shadow-neonYellow/30 hover:scale-105 transition-all">
-                    Shop Gaming Collection
-                  </button>
-                </div>
-              </div>
-
-              <!-- Slide 3 Visual Graphic -->
-              <div class="w-full md:w-1/2 mt-8 md:mt-0 flex justify-center items-center">
-                <div class="p-8 rounded-2xl bg-black/60 border border-slate-800 text-center relative z-10 w-full max-w-sm">
-                  <i class="fa-solid fa-gamepad text-6xl text-neonYellow neon-text-yellow mb-2 animate-pulse"></i>
-                  <p class="font-display font-bold text-xl text-white mt-2">GAME ZONE NEON</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Slider Controls & Indicators -->
-          <button id="prevSlide" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-slate-700 text-white flex items-center justify-center hover:bg-neonCyan hover:text-black transition-all">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button id="nextSlide" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-slate-700 text-white flex items-center justify-center hover:bg-neonCyan hover:text-black transition-all">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-
-          <!-- Slide Dots -->
-          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2" id="sliderDots">
-            <button class="w-3 h-3 rounded-full bg-neonCyan" onclick="goToSlide(0)"></button>
-            <button class="w-3 h-3 rounded-full bg-slate-600" onclick="goToSlide(1)"></button>
-            <button class="w-3 h-3 rounded-full bg-slate-600" onclick="goToSlide(2)"></button>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="customizer" class="py-12 bg-slate-950/80 border-y border-slate-800 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-3xl mx-auto mb-10">
-          <span class="text-neonPink font-mono text-xs tracking-widest uppercase font-semibold">Live Live Preview Tool</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-black text-white mt-1">
-            CUSTOM NEON <span class="text-neonCyan neon-text-cyan">SIGN BUILDER</span>
-          </h2>
-          <p class="text-slate-400 text-sm mt-2">
-            Type your text, pick font styles, glow colors & dimensions. Get instant real-time price estimation!
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          <!-- Left Column: Realtime Neon Live Preview Screen -->
-          <div class="lg:col-span-7 bg-black/80 rounded-2xl border border-slate-800 p-6 sm:p-10 flex flex-col justify-between min-h-[380px] sm:min-h-[450px] relative overflow-hidden shadow-2xl">
-            <!-- Simulated Wall Pattern inside Preview -->
-            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
-
-            <div class="flex justify-between items-center z-10">
-              <span class="text-xs font-mono text-slate-500 bg-slate-900/80 px-3 py-1 rounded-full border border-slate-800">
-                <i class="fa-solid fa-eye text-neonCyan mr-1"></i> Live Preview
-              </span>
-              <button id="togglePowerBtn" class="text-xs font-mono bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-full border border-slate-700 transition-all flex items-center gap-1.5">
-                <i class="fa-solid fa-power-off text-neonGreen"></i> Glow On/Off
-              </button>
-            </div>
-
-            <!-- Central Neon Display Area -->
-            <div class="my-auto py-10 text-center px-4 overflow-hidden flex items-center justify-center min-h-[200px]">
-              <span id="neonPreviewText" class="font-pacifico text-4xl sm:text-6xl text-neonCyan neon-text-cyan transition-all duration-300 break-words max-w-full">
-                Your Neon Text
-              </span>
-            </div>
-
-            <!-- Specs Bar at bottom of preview -->
-            <div class="z-10 bg-slate-900/90 border border-slate-800/80 rounded-xl p-3 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
-              <div>
-                <span>Estimated Size: </span>
-                <strong id="sizeDisplayLabel" class="text-white">Medium (24 inches)</strong>
-              </div>
-              <div>
-                <span>Acrylic Backing: </span>
-                <strong class="text-neonCyan">Clear 5mm Acrylic</strong>
-              </div>
-              <div>
-                <span>Power: </span>
-                <strong class="text-neonYellow">12V Adapter Included</strong>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column: Interactive Configuration Form Controls -->
-          <div class="lg:col-span-5 bg-darkCard border border-slate-800 rounded-2xl p-6 space-y-6">
-            
-            <!-- Step 1: Input Custom Text -->
-            <div>
-              <label class="block text-xs font-mono text-neonCyan uppercase tracking-wider mb-2 font-semibold">
-                1. Enter Custom Text
-              </label>
-              <input type="text" id="customTextInput" value="Your Neon Text" maxlength="30" class="w-full bg-slate-950 border border-slate-700 focus:border-neonCyan text-white text-base rounded-xl px-4 py-3 outline-none font-sans">
-              <span class="text-[10px] text-slate-500 mt-1 block">Maximum 30 characters allowed per line.</span>
-            </div>
-
-            <!-- Step 2: Select Neon Font Style -->
-            <div>
-              <label class="block text-xs font-mono text-neonCyan uppercase tracking-wider mb-2 font-semibold">
-                2. Choose Font Style
-              </label>
-              <div class="grid grid-cols-3 gap-2" id="fontSelectorGroup">
-                <button data-font="font-pacifico" class="font-option p-2.5 rounded-lg bg-slate-900 border border-neonCyan text-neonCyan font-pacifico text-xs text-center truncate hover:border-neonCyan">
-                  Cursive
-                </button>
-                <button data-font="font-orbitron" class="font-option p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-orbitron text-xs text-center truncate hover:border-neonCyan">
-                  Modern
-                </button>
-                <button data-font="font-monoton" class="font-option p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-monoton text-xs text-center truncate hover:border-neonCyan">
-                  Retro
-                </button>
-                <button data-font="font-satisfy" class="font-option p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-satisfy text-xs text-center truncate hover:border-neonCyan">
-                  Elegance
-                </button>
-                <button data-font="font-pressstart" class="font-option p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-pressstart text-[9px] text-center truncate hover:border-neonCyan">
-                  Arcade
-                </button>
-                <button data-font="font-rocksalt" class="font-option p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-rocksalt text-[9px] text-center truncate hover:border-neonCyan">
-                  Wild
-                </button>
-              </div>
-            </div>
-
-            <!-- Step 3: Choose Neon Glow Color -->
-            <div>
-              <label class="block text-xs font-mono text-neonCyan uppercase tracking-wider mb-2 font-semibold">
-                3. Choose Light Color
-              </label>
-              <div class="flex items-center gap-3" id="colorPickerGroup">
-                <button data-color="cyan" data-hex="#00f3ff" class="color-btn w-9 h-9 rounded-full bg-[#00f3ff] ring-2 ring-white ring-offset-2 ring-offset-darkCard transition-transform transform scale-110 shadow-lg shadow-cyan-500/50"></button>
-                <button data-color="pink" data-hex="#ff007f" class="color-btn w-9 h-9 rounded-full bg-[#ff007f] hover:scale-105 transition-transform"></button>
-                <button data-color="yellow" data-hex="#ffe600" class="color-btn w-9 h-9 rounded-full bg-[#ffe600] hover:scale-105 transition-transform"></button>
-                <button data-color="green" data-hex="#00ff66" class="color-btn w-9 h-9 rounded-full bg-[#00ff66] hover:scale-105 transition-transform"></button>
-                <button data-color="purple" data-hex="#b026ff" class="color-btn w-9 h-9 rounded-full bg-[#b026ff] hover:scale-105 transition-transform"></button>
-                <button data-color="white" data-hex="#ffffff" class="color-btn w-9 h-9 rounded-full bg-[#ffffff] hover:scale-105 transition-transform"></button>
-              </div>
-            </div>
-
-            <!-- Step 4: Size Selection & Dynamic Pricing -->
-            <div>
-              <label class="block text-xs font-mono text-neonCyan uppercase tracking-wider mb-2 font-semibold">
-                4. Select Dimensions
-              </label>
-              <div class="grid grid-cols-3 gap-2" id="sizeSelectorGroup">
-                <button data-size="small" data-price="2999" data-label="Small (18 in)" class="size-btn p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 text-xs font-medium text-center hover:border-neonCyan">
-                  Small (18")
-                </button>
-                <button data-size="medium" data-price="4499" data-label="Medium (24 in)" class="size-btn p-2.5 rounded-lg bg-slate-900 border border-neonCyan text-neonCyan text-xs font-medium text-center">
-                  Medium (24")
-                </button>
-                <button data-size="large" data-price="6999" data-label="Large (36 in)" class="size-btn p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 text-xs font-medium text-center hover:border-neonCyan">
-                  Large (36")
-                </button>
-              </div>
-            </div>
-
-            <!-- Price Summary & Add Custom Sign to Cart -->
-            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-              <div>
-                <span class="text-xs text-slate-400 block font-mono">Calculated Price</span>
-                <span id="calculatedPriceDisplay" class="text-2xl font-display font-black text-neonYellow">Rs. 4,499</span>
-              </div>
-              <button id="addCustomToCartBtn" class="px-6 py-3 rounded-xl bg-gradient-to-r from-neonPink to-neonPurple text-white font-bold text-sm shadow-lg shadow-neonPink/30 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
-                <i class="fa-solid fa-cart-plus"></i> Add To Cart
-              </button>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section id="categories" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8">
-        <div>
-          <span class="text-neonCyan font-mono text-xs uppercase tracking-widest font-semibold">Collections</span>
-          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mt-1">FEATURED CATEGORIES</h2>
-        </div>
-        <p class="text-slate-400 text-xs sm:text-sm mt-2 sm:mt-0">Premium quality acrylic laser cut signs</p>
-      </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        
-        <!-- Category Card 1 -->
-        <div onclick="filterCategory('Islamic Signs')" class="cursor-pointer group relative rounded-2xl overflow-hidden bg-darkCard border border-slate-800 p-4 text-center hover:border-neonCyan transition-all duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 mx-auto mb-3 rounded-xl bg-neonCyan/10 border border-neonCyan/30 flex items-center justify-center text-neonCyan text-2xl group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-kaaba"></i>
-          </div>
-          <h3 class="font-display font-semibold text-sm text-white group-hover:text-neonCyan transition-colors">Islamic Signs</h3>
-          <span class="text-[11px] text-slate-400 font-mono">14+ Items</span>
-        </div>
-
-        <!-- Category Card 2 -->
-        <div onclick="filterCategory('Gaming Signs')" class="cursor-pointer group relative rounded-2xl overflow-hidden bg-darkCard border border-slate-800 p-4 text-center hover:border-neonPink transition-all duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 mx-auto mb-3 rounded-xl bg-neonPink/10 border border-neonPink/30 flex items-center justify-center text-neonPink text-2xl group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-gamepad"></i>
-          </div>
-          <h3 class="font-display font-semibold text-sm text-white group-hover:text-neonPink transition-colors">Gaming Signs</h3>
-          <span class="text-[11px] text-slate-400 font-mono">20+ Items</span>
-        </div>
-
-        <!-- Category Card 3 -->
-        <div onclick="filterCategory('Wall Clocks')" class="cursor-pointer group relative rounded-2xl overflow-hidden bg-darkCard border border-slate-800 p-4 text-center hover:border-neonYellow transition-all duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 mx-auto mb-3 rounded-xl bg-neonYellow/10 border border-neonYellow/30 flex items-center justify-center text-neonYellow text-2xl group-hover:scale-110 transition-transform">
-            <i class="fa-regular fa-clock"></i>
-          </div>
-          <h3 class="font-display font-semibold text-sm text-white group-hover:text-neonYellow transition-colors">Neon Wall Clocks</h3>
-          <span class="text-[11px] text-slate-400 font-mono">8+ Items</span>
-        </div>
-
-        <!-- Category Card 4 -->
-        <div onclick="filterCategory('UV Posters')" class="cursor-pointer group relative rounded-2xl overflow-hidden bg-darkCard border border-slate-800 p-4 text-center hover:border-neonGreen transition-all duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 mx-auto mb-3 rounded-xl bg-neonGreen/10 border border-neonGreen/30 flex items-center justify-center text-neonGreen text-2xl group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-image"></i>
-          </div>
-          <h3 class="font-display font-semibold text-sm text-white group-hover:text-neonGreen transition-colors">UV Printed Frames</h3>
-          <span class="text-[11px] text-slate-400 font-mono">12+ Items</span>
-        </div>
-
-        <!-- Category Card 5 -->
-        <div onclick="filterCategory('Custom Neon')" class="cursor-pointer group relative rounded-2xl overflow-hidden bg-darkCard border border-slate-800 p-4 text-center hover:border-neonPurple transition-all duration-300 hover:-translate-y-1 col-span-2 sm:col-span-1">
-          <div class="w-14 h-14 mx-auto mb-3 rounded-xl bg-neonPurple/10 border border-neonPurple/30 flex items-center justify-center text-neonPurple text-2xl group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-          </div>
-          <h3 class="font-display font-semibold text-sm text-white group-hover:text-neonPurple transition-colors">Custom Neon</h3>
-          <span class="text-[11px] text-slate-400 font-mono">Made to Order</span>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="shop" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header & Filter Tabs -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-        <div>
-          <span class="text-neonPink font-mono text-xs uppercase tracking-widest font-semibold">Store Catalog</span>
-          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mt-1">BEST SELLING DESIGNS</h2>
-        </div>
-
-        <!-- Category Tabs -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="categoryTabs">
-          <button onclick="filterCategory('All')" class="category-tab active px-4 py-2 rounded-xl bg-neonCyan text-black font-semibold text-xs whitespace-nowrap transition-all">
-            All Products
-          </button>
-          <button onclick="filterCategory('Islamic Signs')" class="category-tab px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-semibold text-xs whitespace-nowrap hover:border-slate-700 transition-all">
-            Islamic
-          </button>
-          <button onclick="filterCategory('Gaming Signs')" class="category-tab px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-semibold text-xs whitespace-nowrap hover:border-slate-700 transition-all">
-            Gaming
-          </button>
-          <button onclick="filterCategory('Wall Clocks')" class="category-tab px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-semibold text-xs whitespace-nowrap hover:border-slate-700 transition-all">
-            Clocks
-          </button>
-          <button onclick="filterCategory('UV Posters')" class="category-tab px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-semibold text-xs whitespace-nowrap hover:border-slate-700 transition-all">
-            UV Posters
-          </button>
-        </div>
-      </div>
-
-      <!-- Product Cards Responsive Grid -->
-      <div id="productGrid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        <!-- Dynamic JavaScript insertion of product cards -->
-      </div>
-
-    </section>
-
-    <section class="py-12 bg-slate-950 border-t border-slate-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          
-          <div class="p-4 rounded-xl bg-darkCard/50 border border-slate-800">
-            <i class="fa-solid fa-truck-fast text-2xl text-neonCyan mb-2"></i>
-            <h4 class="font-display font-semibold text-white text-sm">Pakistan Wide Delivery</h4>
-            <p class="text-xs text-slate-400 mt-1">Safe acrylic box packaging</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-darkCard/50 border border-slate-800">
-            <i class="fa-solid fa-money-bill-wave text-2xl text-neonGreen mb-2"></i>
-            <h4 class="font-display font-semibold text-white text-sm">Cash On Delivery</h4>
-            <p class="text-xs text-slate-400 mt-1">Pay at your doorstep</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-darkCard/50 border border-slate-800">
-            <i class="fa-solid fa-plug text-2xl text-neonYellow mb-2"></i>
-            <h4 class="font-display font-semibold text-white text-sm">Plug & Play Ready</h4>
-            <p class="text-xs text-slate-400 mt-1">Adapter & mounting included</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-darkCard/50 border border-slate-800">
-            <i class="fa-solid fa-shield-halved text-2xl text-neonPink mb-2"></i>
-            <h4 class="font-display font-semibold text-white text-sm">1 Year Warranty</h4>
-            <p class="text-xs text-slate-400 mt-1">On power adaptors & LED strips</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="reviews" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <span class="text-neonYellow font-mono text-xs uppercase tracking-widest font-semibold">Testimonials</span>
-        <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mt-1">WHAT OUR CUSTOMERS SAY</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <div class="p-6 rounded-2xl bg-darkCard border border-slate-800 space-y-3">
-          <div class="flex text-neonYellow text-xs gap-1">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="text-slate-300 text-xs sm:text-sm italic">
-            "Ordered a custom name sign for my gaming desk. The neon brightness and acrylic finishing from RDD's Trader is exceptional! Arrived safely in Lahore."
-          </p>
-          <div class="pt-2 border-t border-slate-800/60 flex items-center justify-between text-xs">
-            <span class="font-semibold text-white">Hamza Khan</span>
-            <span class="text-emerald-400 font-mono text-[10px]"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-darkCard border border-slate-800 space-y-3">
-          <div class="flex text-neonYellow text-xs gap-1">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="text-slate-300 text-xs sm:text-sm italic">
-            "The Ayat-ul-Kursi neon artwork looks breathtaking in our living room! Highly recommended for quality and quick delivery."
-          </p>
-          <div class="pt-2 border-t border-slate-800/60 flex items-center justify-between text-xs">
-            <span class="font-semibold text-white">Ayesha Malik</span>
-            <span class="text-emerald-400 font-mono text-[10px]"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-darkCard border border-slate-800 space-y-3">
-          <div class="flex text-neonYellow text-xs gap-1">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="text-slate-300 text-xs sm:text-sm italic">
-            "Direct WhatsApp order process was very smooth. Received my order within 3 days in Karachi with full COD options."
-          </p>
-          <div class="pt-2 border-t border-slate-800/60 flex items-center justify-between text-xs">
-            <span class="font-semibold text-white">Usman Tariq</span>
-            <span class="text-emerald-400 font-mono text-[10px]"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <div id="cartDrawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
-    <!-- Backdrop Overlay -->
-    <div id="cartBackdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-
-    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
-      <div id="cartPanel" class="w-screen max-w-md bg-darkNav border-l border-slate-800 shadow-2xl flex flex-col pointer-events-auto transform translate-x-full transition-transform duration-300 ease-in-out">
-        
-        <!-- Cart Drawer Header -->
-        <div class="p-5 border-b border-slate-800 flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <i class="fa-solid fa-bag-shopping text-neonPink text-xl"></i>
-            <h3 class="font-display font-bold text-lg text-white">Your Shopping Cart</h3>
-          </div>
-          <button id="closeCartBtn" class="text-slate-400 hover:text-white p-2 rounded-lg">
-            <i class="fa-solid fa-xmark text-xl"></i>
-          </button>
-        </div>
-
-        <!-- Cart Items List Container -->
-        <div class="flex-1 overflow-y-auto p-5 space-y-4" id="cartItemsContainer">
-          <!-- Dynamically generated cart items -->
-        </div>
-
-        <!-- Cart Drawer Footer -->
-        <div class="p-5 border-t border-slate-800 bg-slate-950/80 space-y-4">
-          <div class="space-y-1.5 text-xs text-slate-300">
-            <div class="flex justify-between">
-              <span>Subtotal:</span>
-              <span id="cartSubtotal" class="font-semibold text-white">Rs. 0</span>
-            </div>
-            <div class="flex justify-between">
-              <span>Estimated Delivery:</span>
-              <span class="text-emerald-400 font-semibold">FREE</span>
-            </div>
-            <div class="flex justify-between text-sm pt-2 border-t border-slate-800">
-              <span class="font-bold text-white">Total Amount:</span>
-              <span id="cartTotal" class="font-display font-bold text-neonYellow text-lg">Rs. 0</span>
-            </div>
-          </div>
-
-          <!-- Checkout via WhatsApp Direct Route -->
-          <button id="whatsappCheckoutBtn" class="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2">
-            <i class="fa-brands fa-whatsapp text-lg"></i> Complete Order via WhatsApp
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="fixed bottom-0 left-0 right-0 z-40 bg-darkNav/95 backdrop-blur-md border-t border-slate-800 md:hidden flex items-center justify-around py-2.5 px-2">
-    <a href="#home" class="flex flex-col items-center text-neonCyan gap-0.5">
-      <i class="fa-solid fa-house text-base"></i>
-      <span class="text-[10px] font-medium">Home</span>
-    </a>
-    <a href="#customizer" class="flex flex-col items-center text-slate-400 hover:text-neonPink gap-0.5">
-      <i class="fa-solid fa-wand-magic-sparkles text-base"></i>
-      <span class="text-[10px] font-medium">Custom</span>
-    </a>
-    <a href="#shop" class="flex flex-col items-center text-slate-400 hover:text-neonCyan gap-0.5">
-      <i class="fa-solid fa-store text-base"></i>
-      <span class="text-[10px] font-medium">Shop</span>
-    </a>
-    <button id="mobileCartBtn" class="relative flex flex-col items-center text-slate-400 hover:text-neonPink gap-0.5">
-      <i class="fa-solid fa-bag-shopping text-base"></i>
-      <span class="text-[10px] font-medium">Cart</span>
-      <span id="mobileCartBadge" class="absolute -top-1 right-1 bg-neonPink text-white font-bold text-[9px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
-    </button>
-  </div>
-
-  <footer class="bg-darkNav border-t border-slate-800 py-10 text-slate-400 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-      
-      <div class="space-y-3">
-        <div class="flex items-center gap-2">
-          <span class="font-display font-black text-xl text-white">RDD'S <span class="text-neonPink">TRADER</span></span>
-        </div>
-        <p class="leading-relaxed">
-          Premium custom neon LED signs, acrylic art frames, and modern aesthetic wall decor crafted with precision in Pakistan.
-        </p>
-        <div class="flex items-center gap-3 pt-2 text-base text-slate-300">
-          <a href="#" class="hover:text-neonCyan"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="hover:text-neonPink"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" class="hover:text-neonGreen"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
-      </div>
-
-      <div>
-        <h4 class="font-display font-bold text-white mb-3 uppercase tracking-wider text-sm">Quick Links</h4>
-        <ul class="space-y-2">
-          <li><a href="#customizer" class="hover:text-neonCyan">Custom Neon Maker</a></li>
-          <li><a href="#shop" class="hover:text-neonCyan">Shop All Products</a></li>
-          <li><a href="#categories" class="hover:text-neonCyan">Islamic Art Collection</a></li>
-          <li><a href="#reviews" class="hover:text-neonCyan">Customer Feedback</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-display font-bold text-white mb-3 uppercase tracking-wider text-sm">Help & Support</h4>
-        <ul class="space-y-2">
-          <li><a href="https://wa.me/923001234567" target="_blank" class="hover:text-neonCyan">Track Order Status</a></li>
-          <li><a href="#" class="hover:text-neonCyan">Shipping & Returns</a></li>
-          <li><a href="#" class="hover:text-neonCyan">Acrylic Sign Care Guide</a></li>
-          <li><a href="#" class="hover:text-neonCyan">Terms & Conditions</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-display font-bold text-white mb-3 uppercase tracking-wider text-sm">Contact Us</h4>
-        <p class="mb-2"><i class="fa-solid fa-location-dot text-neonPink mr-2"></i> Industrial Area, Lahore, Pakistan</p>
-        <p class="mb-2"><i class="fa-solid fa-phone text-neonCyan mr-2"></i> +92 300 1234567</p>
-        <p><i class="fa-solid fa-envelope text-neonYellow mr-2"></i> info@rddstrader.com</p>
-      </div>
-
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 mt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-4">
-      <p>&copy; 2026 RDD's Trader. All rights reserved. Designed with Neon Aesthetic.</p>
-      <div class="flex items-center gap-3 text-slate-500 text-lg">
-        <i class="fa-solid fa-shield"></i>
-        <i class="fa-solid fa-truck"></i>
-        <i class="fa-solid fa-credit-card"></i>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    /* ==========================================================================
-       1. DATA MODELS & INITIAL STATE
-       ========================================================================== */
-    const PRODUCTS = [
-      {
-        id: 'p1',
-        name: 'Ayat-ul-Kursi Glowing Frame',
-        category: 'Islamic Signs',
-        price: 3899,
-        originalPrice: 4999,
-        badge: 'Bestseller',
-        icon: 'fa-kaaba',
-        glowColor: '#00f3ff',
-        textSample: 'آية الكرسي'
-      },
-      {
-        id: 'p2',
-        name: 'Game Zone Controller Neon',
-        category: 'Gaming Signs',
-        price: 2999,
-        originalPrice: 3800,
-        badge: 'Hot',
-        icon: 'fa-gamepad',
-        glowColor: '#ff007f',
-        textSample: 'GAME ZONE'
-      },
-      {
-        id: 'p3',
-        name: 'Good Vibes Only Sign',
-        category: 'Custom Neon',
-        price: 3499,
-        originalPrice: 4200,
-        badge: 'Popular',
-        icon: 'fa-wand-magic-sparkles',
-        glowColor: '#ffe600',
-        textSample: 'Good Vibes Only'
-      },
-      {
-        id: 'p4',
-        name: 'Minimal Acrylic Neon Clock',
-        category: 'Wall Clocks',
-        price: 2799,
-        originalPrice: 3500,
-        badge: 'New',
-        icon: 'fa-clock',
-        glowColor: '#00ff66',
-        textSample: '12:00'
-      },
-      {
-        id: 'p5',
-        name: 'MashAllah TabarakAllah Sign',
-        category: 'Islamic Signs',
-        price: 3199,
-        originalPrice: 4000,
-        badge: 'Trending',
-        icon: 'fa-moon',
-        glowColor: '#b026ff',
-        textSample: 'مَاشَاءَ ٱللَّٰهُ'
-      },
-      {
-        id: 'p6',
-        name: 'Cyberpunk UV Poster Frame',
-        category: 'UV Posters',
-        price: 1899,
-        originalPrice: 2400,
-        badge: 'Sale',
-        icon: 'fa-image',
-        glowColor: '#00f3ff',
-        textSample: 'CYBERPUNK'
-      },
-      {
-        id: 'p7',
-        name: 'Live Streaming On-Air Light',
-        category: 'Gaming Signs',
-        price: 2499,
-        originalPrice: 3100,
-        badge: 'Streamer',
-        icon: 'fa-headset',
-        glowColor: '#ff007f',
-        textSample: 'ON AIR'
-      },
-      {
-        id: 'p8',
-        name: 'Bismillah Calligraphy Light',
-        category: 'Islamic Signs',
-        price: 3599,
-        originalPrice: 4500,
-        badge: 'Popular',
-        icon: 'fa-kaaba',
-        glowColor: '#ffe600',
-        textSample: 'بِسْمِ ٱللَّٰهِ'
-      }
-    ];
-
-    let cart = [];
-    let currentSlide = 0;
-    let autoSlideTimer = null;
-    let customNeonConfig = {
-      text: 'Your Neon Text',
-      font: 'font-pacifico',
-      color: 'cyan',
-      hex: '#00f3ff',
-      size: 'medium',
-      price: 4499,
-      sizeLabel: 'Medium (24 in)'
-    };
-
-    /* ==========================================================================
-       2. DOM ELEMENT REFERENCES
-       ========================================================================== */
-    const productGrid = document.getElementById('productGrid');
-    const cartCountBadge = document.getElementById('cartCountBadge');
-    const mobileCartBadge = document.getElementById('mobileCartBadge');
-    const cartDrawer = document.getElementById('cartDrawer');
-    const cartPanel = document.getElementById('cartPanel');
-    const cartItemsContainer = document.getElementById('cartItemsContainer');
-    const cartSubtotal = document.getElementById('cartSubtotal');
-    const cartTotal = document.getElementById('cartTotal');
-    
-    // Customizer Elements
-    const customTextInput = document.getElementById('customTextInput');
-    const neonPreviewText = document.getElementById('neonPreviewText');
-    const calculatedPriceDisplay = document.getElementById('calculatedPriceDisplay');
-    const sizeDisplayLabel = document.getElementById('sizeDisplayLabel');
-
-    /* ==========================================================================
-       3. INITIALIZATION & EVEN LISTENERS
-       ========================================================================== */
-    window.addEventListener('DOMContentLoaded', () => {
-      renderProducts(PRODUCTS);
-      initHeroSlider();
-      initCustomizerLogic();
-      initCartEvents();
-      initHeaderEvents();
-    });
-
-    function renderProducts(items) {
-      productGrid.innerHTML = '';
-      
-      if (items.length === 0) {
-        productGrid.innerHTML = `
-          <div class="col-span-full py-12 text-center text-slate-400">
-            <i class="fa-solid fa-ghost text-4xl mb-3 text-slate-600"></i>
-            <p>No products match your criteria.</p>
-          </div>
-        `;
-        return;
-      }
-
-      items.forEach(product => {
-        const discountPercent = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
-        
-        const cardHtml = `
-          <div class="group relative rounded-2xl bg-darkCard border border-slate-800/80 overflow-hidden hover:border-neonCyan transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-neonCyan/10">
-            
-            <!-- Card Image Box simulation -->
-            <div class="relative h-48 sm:h-52 bg-slate-950 flex items-center justify-center p-6 border-b border-slate-800/60 overflow-hidden">
-              <div class="absolute inset-0 bg-gradient-to-t from-darkCard to-transparent opacity-80"></div>
-              
-              <!-- Badge -->
-              <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full text-[10px] font-bold bg-neonPink/20 text-neonPink border border-neonPink/40 uppercase tracking-wider">
-                ${product.badge}
-              </span>
-
-              <!-- Discount percentage -->
-              <span class="absolute top-3 right-3 z-10 text-[10px] font-mono font-bold text-emerald-400">
-                -${discountPercent}%
-              </span>
-
-              <!-- Neon Product Preview -->
-              <div class="relative z-10 text-center">
-                <p class="font-sans font-bold text-2xl sm:text-3xl transition-transform duration-300 group-hover:scale-110" style="color: ${product.glowColor}; text-shadow: 0 0 10px ${product.glowColor}">
-                  ${product.textSample}
-                </p>
-              </div>
-            </div>
-
-            <!-- Content Area -->
-            <div class="p-4 flex-grow flex flex-col justify-between">
-              <div>
-                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider">${product.category}</span>
-                <h3 class="font-display font-semibold text-sm text-white mt-0.5 line-clamp-1 group-hover:text-neonCyan transition-colors">
-                  ${product.name}
-                </h3>
-              </div>
-
-              <div class="mt-4 flex items-center justify-between">
                 <div>
-                  <span class="text-xs text-slate-500 line-through mr-1">Rs. ${product.originalPrice.toLocaleString()}</span>
-                  <span class="font-display font-bold text-sm sm:text-base text-neonYellow">Rs. ${product.price.toLocaleString()}</span>
+                    <span class="text-xl md:text-2xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400">RDD'S TRADER</span>
+                    <p class="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Light Up Your Space</p>
                 </div>
-                
-                <button onclick="addToCart('${product.id}')" class="p-2.5 rounded-xl bg-slate-800 hover:bg-neonCyan hover:text-black text-slate-200 transition-all active:scale-95">
-                  <i class="fa-solid fa-cart-plus text-sm"></i>
+            </button>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <button onclick="navigateTo('couple-customizer')" class="hover:text-pink-400 transition-colors flex items-center gap-1.5 text-pink-400"><i class="fa-solid fa-heart text-xs"></i> Couple Neon Studio</button>
+                <button onclick="navigateTo('text-customizer')" class="hover:text-pink-400 transition-colors flex items-center gap-1.5 text-cyan-400"><i class="fa-solid fa-pen-nib text-xs"></i> Custom Text Neon</button>
+                <button onclick="navigateTo('home', 'categories')" class="hover:text-pink-400 transition-colors">Categories</button>
+                <button onclick="navigateTo('home', 'catalog')" class="hover:text-pink-400 transition-colors">Best Sellers</button>
+            </nav>
+
+            <!-- Actions & Contact -->
+            <div class="flex items-center space-x-3">
+                <!-- Cart Button -->
+                <button id="cart-toggle-btn" class="relative p-2.5 rounded-xl bg-gray-800 text-gray-200 hover:text-pink-400 hover:bg-gray-700 transition">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-pink-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
                 </button>
-              </div>
+
+                <!-- Direct WhatsApp Button -->
+                <a href="https://wa.me/923042178799?text=Hi%20RDD's%20Trader!%20I%20have%20an%20inquiry%20about%20a%20neon%20sign." target="_blank" class="hidden sm:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-600/30 transition transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Chat on WhatsApp</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2.5 text-gray-300 hover:text-white">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-gray-800 px-4 pt-3 pb-6 space-y-3">
+            <button onclick="navigateTo('couple-customizer')" class="w-full text-left py-2 text-pink-400 font-semibold border-b border-gray-800"><i class="fa-solid fa-heart mr-2"></i> Couple Name Neon Studio</button>
+            <button onclick="navigateTo('text-customizer')" class="w-full text-left py-2 text-cyan-400 font-semibold border-b border-gray-800"><i class="fa-solid fa-pen-nib mr-2"></i> Custom Text Neon Maker</button>
+            <button onclick="navigateTo('home', 'categories')" class="w-full text-left py-2 text-gray-300 hover:text-pink-400 border-b border-gray-800"><i class="fa-solid fa-layer-group mr-2"></i> Product Categories</button>
+            <button onclick="navigateTo('home', 'catalog')" class="w-full text-left py-2 text-gray-300 hover:text-pink-400 border-b border-gray-800"><i class="fa-solid fa-fire mr-2"></i> Popular Collections</button>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="https://wa.me/923042178799?text=Hi%20RDD's%20Trader!" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 text-white py-2.5 rounded-xl font-semibold">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Views Wrapper -->
+    <main>
+        <div id="page-home" class="page-view">
+            <!-- Hero Section -->
+            <section class="relative pt-12 pb-20 overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-400 text-xs font-semibold tracking-wide">
+                                <i class="fa-solid fa-sparkles"></i> 100% Handcrafted Acrylic Neon Signs
+                            </div>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+                                Transform Your Room With <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-400 to-cyan-400">Glowing Neon Art</span>
+                            </h1>
+                            <p class="text-gray-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+                                Design personalized couple names, anime LED signs, Islamic wall art, and ambient neon decor. Built with energy-efficient LED strips and clear acrylic backings.
+                            </p>
+                            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                                <button onclick="navigateTo('couple-customizer')" class="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-pink-600/30 hover:scale-105 transition transform flex items-center gap-2">
+                                    <i class="fa-solid fa-heart"></i> Design Couple Neon
+                                </button>
+                                <button onclick="navigateTo('text-customizer')" class="bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 font-bold px-8 py-4 rounded-xl transition transform hover:scale-105 flex items-center gap-2">
+                                    <i class="fa-solid fa-pen-nib text-cyan-400"></i> Custom Name Sign
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Visual Neon Graphic Canvas -->
+                        <div class="relative flex justify-center">
+                            <div class="w-full max-w-lg glass-card rounded-3xl p-8 relative overflow-hidden shadow-2xl border border-pink-500/20">
+                                <div class="absolute -top-10 -right-10 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl"></div>
+                                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl"></div>
+                                
+                                <div class="text-center space-y-6 py-8">
+                                    <p class="text-xs uppercase tracking-widest text-pink-400 font-bold">Custom Neon Studio Preview</p>
+                                    <div class="py-4">
+                                        <h3 class="text-4xl sm:text-5xl font-neon glow-pink transform -rotate-2">
+                                            Danish <span class="text-3xl text-cyan-400 glow-cyan">&amp;</span> Anum
+                                        </h3>
+                                    </div>
+                                    <div class="pt-4 flex items-center justify-center gap-3 text-xs text-gray-300">
+                                        <button onclick="navigateTo('couple-customizer')" class="bg-pink-600 hover:bg-pink-500 text-white px-5 py-2.5 rounded-xl font-bold shadow-md flex items-center gap-2 transition">
+                                            <i class="fa-solid fa-heart"></i> Customize Couple Sign →
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="categories" class="py-16 bg-slate-900/40">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <h2 class="text-3xl font-bold text-white">Explore Our Categories</h2>
+                        <p class="text-gray-400 mt-2">Find handcrafted LED neon art and premium laser-cut acrylic sign pieces.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                        <!-- Category 1: Neon Signs -->
+                        <div onclick="filterCategory('Neon Sign')" class="glass-card rounded-2xl p-8 text-center border border-pink-500/20 hover:border-pink-500 transition transform hover:-translate-y-1 cursor-pointer group">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-3xl mb-4 border border-pink-500/30 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h3 class="font-extrabold text-white text-2xl">Neon Signs</h3>
+                            <p class="text-sm text-gray-400 mt-2">Custom name signs, couple wedding neons, gaming setup LED lights, and aesthetic quote wall glows.</p>
+                            <span class="inline-block mt-4 text-xs font-bold text-pink-400 uppercase tracking-wider group-hover:underline">Browse Neon Signs →</span>
+                        </div>
+
+                        <!-- Category 2: Acrylic Signs -->
+                        <div onclick="filterCategory('Acrylic Sign')" class="glass-card rounded-2xl p-8 text-center border border-cyan-500/20 hover:border-cyan-500 transition transform hover:-translate-y-1 cursor-pointer group">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-3xl mb-4 border border-cyan-500/30 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <h3 class="font-extrabold text-white text-2xl">Acrylic Signs</h3>
+                            <p class="text-sm text-gray-400 mt-2">Islamic Ayat-ul-Kursi frames, Bismillah calligraphy, UV-printed wall frames, and custom acrylic cutouts.</p>
+                            <span class="inline-block mt-4 text-xs font-bold text-cyan-400 uppercase tracking-wider group-hover:underline">Browse Acrylic Signs →</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="catalog" class="py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 gap-4">
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-white" id="catalog-title">Popular Ready-Made Collection</h2>
+                            <p class="text-gray-400 mt-1">Best selling designs crafted with precision.</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="filterCategory('All')" id="btn-cat-all" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-pink-600 text-white">All</button>
+                            <button onclick="filterCategory('Neon Sign')" id="btn-cat-neon" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-gray-800 text-gray-300 hover:text-white">Neon Signs</button>
+                            <button onclick="filterCategory('Acrylic Sign')" id="btn-cat-acrylic" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-gray-800 text-gray-300 hover:text-white">Acrylic Signs</button>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid">
+                        <!-- Products injected via JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-couple-customizer" class="page-view hidden py-10 bg-slate-900/80 min-h-screen">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Navigation back bar -->
+                <div class="flex items-center justify-between border-b border-gray-800 pb-6 mb-8">
+                    <button onclick="navigateTo('home')" class="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-gray-200 px-4 py-2 rounded-xl text-sm font-semibold transition">
+                        <i class="fa-solid fa-arrow-left"></i> Back To Store
+                    </button>
+                    <span class="text-xs font-bold text-pink-400 uppercase tracking-widest bg-pink-500/10 px-3 py-1 rounded-full border border-pink-500/20">
+                        Couple Neon Studio
+                    </span>
+                </div>
+
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Design Your Couple Name Neon</h1>
+                    <p class="text-gray-400 mt-2">Personalized wedding, engagement, or anniversary neon light builder.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    <!-- Preview Canvas Column -->
+                    <div class="lg:col-span-7">
+                        <div class="glass-card rounded-2xl p-6 sm:p-8 neon-preview-container min-h-[380px] flex flex-col justify-between items-center text-center relative overflow-hidden shadow-2xl">
+                            <div class="w-full flex justify-between items-center text-xs text-gray-400 border-b border-gray-800 pb-3 mb-6">
+                                <span><i class="fa-solid fa-eye text-pink-400 mr-1"></i> Real-time Glowing Preview</span>
+                                <span id="couple-size-badge" class="bg-pink-500/20 text-pink-300 px-2.5 py-1 rounded-md font-mono">Medium (3 Feet)</span>
+                            </div>
+
+                            <div class="my-auto py-8 w-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 flex-wrap">
+                                <span id="preview-name1" class="text-4xl sm:text-5xl font-neon glow-pink">Danish</span>
+                                <span id="preview-connector" class="text-3xl sm:text-4xl text-cyan-400 glow-cyan mx-2">&amp;</span>
+                                <span id="preview-name2" class="text-4xl sm:text-5xl font-neon glow-pink">Anum</span>
+                            </div>
+
+                            <div class="w-full pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs text-gray-400">
+                                <span>Backing: <strong id="preview-backing" class="text-white">Cut To Shape Acrylic</strong></span>
+                                <span>Dimensions: <strong id="preview-dim" class="text-white">36" x 16" Inches</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls Column -->
+                    <div class="lg:col-span-5 glass-card rounded-2xl p-6 sm:p-8 space-y-6 border border-gray-800">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">First Name / Text 1</label>
+                            <input type="text" id="couple-name1" value="Danish" placeholder="e.g. Danish" maxlength="15" 
+                                   class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-pink-500 transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Connector Symbol</label>
+                            <div class="grid grid-cols-4 gap-2">
+                                <button type="button" class="connector-btn active-btn p-2.5 rounded-xl border border-pink-500 bg-pink-500/20 text-white font-bold text-center" data-connector="&">&amp;</button>
+                                <button type="button" class="connector-btn p-2.5 rounded-xl border border-gray-700 bg-gray-900 text-gray-300 hover:border-pink-500 font-bold text-center" data-connector="❤️">❤️</button>
+                                <button type="button" class="connector-btn p-2.5 rounded-xl border border-gray-700 bg-gray-900 text-gray-300 hover:border-pink-500 font-bold text-center" data-connector="∞">∞</button>
+                                <button type="button" class="connector-btn p-2.5 rounded-xl border border-gray-700 bg-gray-900 text-gray-300 hover:border-pink-500 text-xs font-semibold text-center" data-connector="weds">weds</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Second Name / Text 2</label>
+                            <input type="text" id="couple-name2" value="Anum" placeholder="e.g. Anum" maxlength="15" 
+                                   class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-pink-500 transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Font Style</label>
+                            <select id="couple-font" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-pink-500">
+                                <option value="font-neon">Signature Neon (Pacifico)</option>
+                                <option value="font-cursive">Dancing Script</option>
+                                <option value="font-script">Great Vibes Elegant</option>
+                                <option value="font-modern">Modern Bold (Montserrat)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Neon Color</label>
+                            <div class="grid grid-cols-5 gap-2">
+                                <button type="button" class="couple-color-btn active-color h-9 rounded-lg border-2 border-pink-500 bg-pink-500 shadow-md" data-color="glow-pink" data-name="Neon Pink"></button>
+                                <button type="button" class="couple-color-btn h-9 rounded-lg border-2 border-transparent bg-cyan-400 hover:border-white" data-color="glow-cyan" data-name="Ice Cyan"></button>
+                                <button type="button" class="couple-color-btn h-9 rounded-lg border-2 border-transparent bg-amber-400 hover:border-white" data-color="glow-warm" data-name="Warm White"></button>
+                                <button type="button" class="couple-color-btn h-9 rounded-lg border-2 border-transparent bg-white hover:border-pink-500" data-color="glow-white" data-name="Cool White"></button>
+                                <button type="button" class="couple-color-btn h-9 rounded-lg border-2 border-transparent bg-purple-500 hover:border-white" data-color="glow-purple" data-name="Neon Purple"></button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Sign Size</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" class="couple-size-btn p-2.5 rounded-xl border border-gray-700 bg-gray-900 text-xs font-medium text-gray-300 text-center" data-size="Small (2 Feet)" data-price="4500" data-dim="24 x 12 Inches">Small (2ft)</button>
+                                <button type="button" class="couple-size-btn active-size p-2.5 rounded-xl border border-pink-500 bg-pink-500/20 text-xs font-semibold text-white text-center" data-size="Medium (3 Feet)" data-price="6500" data-dim="36 x 16 Inches">Medium (3ft)</button>
+                                <button type="button" class="couple-size-btn p-2.5 rounded-xl border border-gray-700 bg-gray-900 text-xs font-medium text-gray-300 text-center" data-size="Large (4 Feet)" data-price="9500" data-dim="48 x 20 Inches">Large (4ft)</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Acrylic Backing Cut</label>
+                            <select id="couple-backing" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-pink-500">
+                                <option value="Cut To Shape Acrylic">Cut To Shape Contour</option>
+                                <option value="Full Rectangular Board">Full Rectangular Board</option>
+                                <option value="Heart Shape Acrylic Board">Heart Shape Acrylic Board</option>
+                            </select>
+                        </div>
+
+                        <div class="pt-4 border-t border-gray-800 flex flex-col gap-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-400 text-sm">Estimated Price:</span>
+                                <span id="couple-price-display" class="text-2xl font-black text-pink-400">Rs. 6,500</span>
+                            </div>
+                            <button id="order-couple-btn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 text-base transition">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i> Order Couple Sign On WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-text-customizer" class="page-view hidden py-10 bg-slate-900/80 min-h-screen">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Navigation back bar -->
+                <div class="flex items-center justify-between border-b border-gray-800 pb-6 mb-8">
+                    <button onclick="navigateTo('home')" class="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-gray-200 px-4 py-2 rounded-xl text-sm font-semibold transition">
+                        <i class="fa-solid fa-arrow-left"></i> Back To Store
+                    </button>
+                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
+                        Custom Text Studio
+                    </span>
+                </div>
+
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Design Custom Text Neon</h1>
+                    <p class="text-gray-400 mt-2">Type your phrase, business brand, or bedroom tag to preview live.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    <div class="lg:col-span-7">
+                        <div class="glass-card rounded-2xl p-6 sm:p-8 neon-preview-container min-h-[340px] flex flex-col justify-between items-center text-center relative overflow-hidden shadow-2xl">
+                            <div class="w-full flex justify-between items-center text-xs text-gray-400 border-b border-gray-800 pb-3 mb-6">
+                                <span><i class="fa-solid fa-lightbulb text-amber-400 mr-1"></i> Custom Text Preview</span>
+                                <span id="text-size-badge" class="bg-cyan-500/20 text-cyan-300 px-2.5 py-1 rounded-md font-mono">2 Feet (Medium)</span>
+                            </div>
+
+                            <div class="my-auto py-8">
+                                <h3 id="single-text-preview" class="text-4xl sm:text-6xl font-neon glow-cyan">Good Vibes Only</h3>
+                            </div>
+
+                            <div class="w-full pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs text-gray-400">
+                                <span>Includes: 12V Power Adapter + Mounting Clips</span>
+                                <span>Status: <strong class="text-emerald-400">Ready To Handcraft</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 glass-card rounded-2xl p-6 sm:p-8 space-y-6 border border-gray-800">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Your Text / Word</label>
+                            <input type="text" id="single-text-input" value="Good Vibes Only" placeholder="Type your text..." maxlength="25"
+                                   class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Font Style</label>
+                            <select id="single-text-font" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400">
+                                <option value="font-neon">Neon Pacifico</option>
+                                <option value="font-cursive">Dancing Script</option>
+                                <option value="font-script">Great Vibes Script</option>
+                                <option value="font-modern">Montserrat Modern</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Glow Color</label>
+                            <div class="grid grid-cols-5 gap-2">
+                                <button type="button" class="text-color-btn active-color h-9 rounded-lg border-2 border-cyan-400 bg-cyan-400 shadow-md" data-color="glow-cyan" data-name="Ice Cyan"></button>
+                                <button type="button" class="text-color-btn h-9 rounded-lg border-2 border-transparent bg-pink-500 hover:border-white" data-color="glow-pink" data-name="Neon Pink"></button>
+                                <button type="button" class="text-color-btn h-9 rounded-lg border-2 border-transparent bg-amber-400 hover:border-white" data-color="glow-warm" data-name="Warm White"></button>
+                                <button type="button" class="text-color-btn h-9 rounded-lg border-2 border-transparent bg-white hover:border-pink-500" data-color="glow-white" data-name="Cool White"></button>
+                                <button type="button" class="text-color-btn h-9 rounded-lg border-2 border-transparent bg-purple-500 hover:border-white" data-color="glow-purple" data-name="Neon Purple"></button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Length Size</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" class="text-size-btn p-2.5 rounded-xl border border-gray-700 bg-gray-900 text-xs text-gray-300" data-size="1.5 Feet" data-price="3500">1.5 ft (Small)</button>
+                                <button type="button" class="text-size-btn active-size p-2.5 rounded-xl border border-cyan-400 bg-cyan-400/20 text-xs font-semibold text-white" data-size="2 Feet" data-price="4800">2 ft (Medium)</button>
+                                <button type="button" class="text-size-btn p-2.5 rounded-xl border border-gray-700 bg-gray-900 text-xs text-gray-300" data-size="3 Feet" data-price="6800">3 ft (Large)</button>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-gray-800 flex flex-col gap-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-400 text-sm">Estimated Price:</span>
+                                <span id="single-text-price" class="text-2xl font-black text-cyan-400">Rs. 4,800</span>
+                            </div>
+                            <button id="order-text-btn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 text-base transition">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i> Order Text Sign On WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="checkout-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center px-4">
+        <div id="checkout-modal-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+        <div class="relative w-full max-w-lg glass-card bg-gray-900 border border-gray-800 rounded-3xl p-6 sm:p-8 shadow-2xl z-10 space-y-5">
+            <div class="flex justify-between items-center border-b border-gray-800 pb-4">
+                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-cart-flatbed text-pink-500"></i> Enter Delivery Details
+                </h3>
+                <button id="close-checkout-modal" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
             </div>
 
-          </div>
-        `;
-        productGrid.insertAdjacentHTML('beforeend', cardHtml);
-      });
-    }
+            <p class="text-xs text-gray-400">Order details will be recorded in our Admin Panel and sent to WhatsApp for instant confirmation.</p>
 
-    function filterCategory(category) {
-      // Update UI active tab button
-      const buttons = document.querySelectorAll('.category-tab');
-      buttons.forEach(btn => {
-        if(btn.textContent.trim().toLowerCase().includes(category.toLowerCase()) || (category === 'All' && btn.textContent.includes('All'))) {
-          btn.className = "category-tab active px-4 py-2 rounded-xl bg-neonCyan text-black font-semibold text-xs whitespace-nowrap transition-all";
-        } else {
-          btn.className = "category-tab px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-semibold text-xs whitespace-nowrap hover:border-slate-700 transition-all";
-        }
-      });
+            <form id="customer-order-form" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1">Your Full Name *</label>
+                    <input type="text" id="cust-name" required placeholder="e.g. Muhammad Ali" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-pink-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1">Phone / WhatsApp Number *</label>
+                    <input type="tel" id="cust-phone" required placeholder="e.g. 0300 1234567" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-pink-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1">Delivery City &amp; Address *</label>
+                    <input type="text" id="cust-address" required placeholder="e.g. House #12, Block 4, Gulshan, Karachi" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-pink-500">
+                </div>
 
-      if (category === 'All') {
-        renderProducts(PRODUCTS);
-      } else {
-        const filtered = PRODUCTS.filter(p => p.category.toLowerCase() === category.toLowerCase());
-        renderProducts(filtered);
-      }
-    }
+                <!-- Order Summary Box -->
+                <div class="bg-gray-800/80 rounded-xl p-4 border border-gray-700 space-y-2 text-xs">
+                    <p class="font-bold text-pink-400 uppercase tracking-wider">Order Summary:</p>
+                    <div id="modal-order-summary" class="text-gray-300 space-y-1"></div>
+                </div>
 
-    function initHeroSlider() {
-      const heroSlider = document.getElementById('heroSlider');
-      const prevBtn = document.getElementById('prevSlide');
-      const nextBtn = document.getElementById('nextSlide');
-      const totalSlides = 3;
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 text-base transition">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Submit Order &amp; Open WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
 
-      function updateSlidePosition() {
-        heroSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
-        
-        // Update dots
-        const dots = document.querySelectorAll('#sliderDots button');
-        dots.forEach((dot, idx) => {
-          dot.className = idx === currentSlide ? "w-3 h-3 rounded-full bg-neonCyan" : "w-3 h-3 rounded-full bg-slate-600";
-        });
-      }
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+        <div id="cart-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md glass-card bg-gray-900 border-l border-gray-800 p-6 flex flex-col justify-between shadow-2xl">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-gray-800">
+                    <h3 class="text-lg font-bold text-white"><i class="fa-solid fa-bag-shopping text-pink-500 mr-2"></i> Your Shopping Bag</h3>
+                    <button id="cart-close-btn" class="text-gray-400 hover:text-white p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
 
-      window.goToSlide = function(index) {
-        currentSlide = index;
-UpdateSlidePosition();
-        resetTimer();
-      };
-
-      prevBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateSlidePosition();
-        resetTimer();
-      });
-
-      nextBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlidePosition();
-        resetTimer();
-      });
-
-      function startTimer() {
-        autoSlideTimer = setInterval(() => {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          updateSlidePosition();
-        }, 5000);
-      }
-
-      function resetTimer() {
-        clearInterval(autoSlideTimer);
-        startTimer();
-      }
-
-      startTimer();
-    }
-
-    function initCustomizerLogic() {
-      // 1. Text Input Event
-      customTextInput.addEventListener('input', (e) => {
-        const text = e.target.value.trim() || 'Your Neon Text';
-        customNeonConfig.text = text;
-        neonPreviewText.textContent = text;
-      });
-
-      // 2. Font Selector Buttons
-      const fontOptions = document.querySelectorAll('.font-option');
-      fontOptions.forEach(btn => {
-        btn.addEventListener('click', () => {
-          fontOptions.forEach(b => {
-            b.classList.remove('border-neonCyan', 'text-neonCyan');
-            b.classList.add('border-slate-800', 'text-slate-300');
-          });
-          btn.classList.add('border-neonCyan', 'text-neonCyan');
-          
-          const selectedFont = btn.dataset.font;
-          customNeonConfig.font = selectedFont;
-          
-          // Reset font classes on preview
-          neonPreviewText.className = `text-4xl sm:text-6xl transition-all duration-300 break-words max-w-full ${selectedFont} neon-text-${customNeonConfig.color}`;
-        });
-      });
-
-      // 3. Light Color Buttons
-      const colorBtns = document.querySelectorAll('.color-btn');
-      colorBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          colorBtns.forEach(b => b.classList.remove('ring-2', 'ring-white', 'ring-offset-2', 'scale-110'));
-          btn.classList.add('ring-2', 'ring-white', 'ring-offset-2', 'scale-110');
-          
-          customNeonConfig.color = btn.dataset.color;
-          customNeonConfig.hex = btn.dataset.hex;
-          
-          neonPreviewText.style.color = btn.dataset.hex;
-          neonPreviewText.style.textShadow = `0 0 10px ${btn.dataset.hex}, 0 0 20px ${btn.dataset.hex}, 0 0 40px ${btn.dataset.hex}`;
-        });
-      });
-
-      // 4. Dimension & Size Buttons
-      const sizeBtns = document.querySelectorAll('.size-btn');
-      sizeBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          sizeBtns.forEach(b => {
-            b.classList.remove('border-neonCyan', 'text-neonCyan');
-            b.classList.add('border-slate-800', 'text-slate-300');
-          });
-          btn.classList.add('border-neonCyan', 'text-neonCyan');
-
-          customNeonConfig.size = btn.dataset.size;
-          customNeonConfig.price = parseInt(btn.dataset.price);
-          customNeonConfig.sizeLabel = btn.dataset.label;
-
-          // Update UI Display
-          calculatedPriceDisplay.textContent = `Rs. ${customNeonConfig.price.toLocaleString()}`;
-          sizeDisplayLabel.textContent = customNeonConfig.sizeLabel;
-        });
-      });
-
-      // Power Toggle Button
-      let isPowerOn = true;
-      document.getElementById('togglePowerBtn').addEventListener('click', () => {
-        isPowerOn = !isPowerOn;
-        if (!isPowerOn) {
-          neonPreviewText.style.textShadow = 'none';
-          neonPreviewText.style.opacity = '0.3';
-        } else {
-          neonPreviewText.style.textShadow = `0 0 10px ${customNeonConfig.hex}, 0 0 20px ${customNeonConfig.hex}`;
-          neonPreviewText.style.opacity = '1';
-        }
-      });
-
-      // Add Custom Neon to Cart Event
-      document.getElementById('addCustomToCartBtn').addEventListener('click', () => {
-        const customItem = {
-          id: 'custom-' + Date.now(),
-          name: `Custom Sign: "${customNeonConfig.text}"`,
-          category: 'Custom Neon',
-          price: customNeonConfig.price,
-          details: `${customNeonConfig.sizeLabel} | Color: ${customNeonConfig.color}`,
-          glowColor: customNeonConfig.hex,
-          quantity: 1
-        };
-
-        cart.push(customItem);
-        updateCartUI();
-        openCartDrawer();
-      });
-    }
-
-    function addToCart(productId) {
-      const product = PRODUCTS.find(p => p.id === productId);
-      if (!product) return;
-
-      const existingIndex = cart.findIndex(item => item.id === productId);
-      if (existingIndex > -1) {
-        cart[existingIndex].quantity += 1;
-      } else {
-        cart.push({
-          ...product,
-          quantity: 1
-        });
-      }
-
-      updateCartUI();
-      openCartDrawer();
-    }
-
-    function updateCartQuantity(id, change) {
-      const itemIndex = cart.findIndex(i => i.id === id);
-      if (itemIndex > -1) {
-        cart[itemIndex].quantity += change;
-        if (cart[itemIndex].quantity <= 0) {
-          cart.splice(itemIndex, 1);
-        }
-      }
-      updateCartUI();
-    }
-
-    function updateCartUI() {
-      // Total count badge
-      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-      cartCountBadge.textContent = totalItems;
-      mobileCartBadge.textContent = totalItems;
-
-      // Subtotal calculation
-      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-      cartSubtotal.textContent = `Rs. ${subtotal.toLocaleString()}`;
-      cartTotal.textContent = `Rs. ${subtotal.toLocaleString()}`;
-
-      // Render cart items HTML
-      if (cart.length === 0) {
-        cartItemsContainer.innerHTML = `
-          <div class="py-12 text-center text-slate-400">
-            <i class="fa-solid fa-bag-shopping text-4xl text-slate-700 mb-3"></i>
-            <p class="text-sm">Your cart is currently empty.</p>
-          </div>
-        `;
-        return;
-      }
-
-      cartItemsContainer.innerHTML = '';
-      cart.forEach(item => {
-        const itemHtml = `
-          <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between gap-3">
-            <div class="flex-1">
-              <h4 class="font-semibold text-xs text-white line-clamp-1">${item.name}</h4>
-              <p class="text-[10px] text-slate-400 mt-0.5">${item.details || item.category}</p>
-              <span class="font-display font-bold text-xs text-neonYellow">Rs. ${(item.price * item.quantity).toLocaleString()}</span>
+                <div id="cart-items-container" class="py-4 space-y-4 max-h-[60vh] overflow-y-auto">
+                    <p id="empty-cart-msg" class="text-center text-gray-500 py-8 text-sm">Your bag is currently empty.</p>
+                </div>
             </div>
 
-            <div class="flex items-center gap-2 bg-slate-950 p-1 rounded-lg border border-slate-800">
-              <button onclick="updateCartQuantity('${item.id}', -1)" class="w-6 h-6 rounded bg-slate-800 text-slate-300 text-xs flex items-center justify-center hover:bg-slate-700">
-                <i class="fa-solid fa-minus"></i>
-              </button>
-              <span class="text-xs font-bold text-white px-1">${item.quantity}</span>
-              <button onclick="updateCartQuantity('${item.id}', 1)" class="w-6 h-6 rounded bg-slate-800 text-slate-300 text-xs flex items-center justify-center hover:bg-slate-700">
-                <i class="fa-solid fa-plus"></i>
-              </button>
+            <div class="border-t border-gray-800 pt-4 space-y-4">
+                <div class="flex justify-between items-center font-bold text-base">
+                    <span class="text-gray-300">Total Amount:</span>
+                    <span id="cart-total-price" class="text-pink-400">Rs. 0</span>
+                </div>
+                <button id="cart-checkout-btn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Checkout via WhatsApp
+                </button>
             </div>
-          </div>
-        `;
-        cartItemsContainer.insertAdjacentHTML('beforeend', itemHtml);
-      });
-    }
+        </div>
+    </div>
 
-    function initCartEvents() {
-      const cartBtn = document.getElementById('cartBtn');
-      const mobileCartBtn = document.getElementById('mobileCartBtn');
-      const closeCartBtn = document.getElementById('closeCartBtn');
-      const cartBackdrop = document.getElementById('cartBackdrop');
-      const whatsappCheckoutBtn = document.getElementById('whatsappCheckoutBtn');
+    <footer class="bg-gray-950 border-t border-gray-800 pt-12 pb-8 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 pb-12">
+            <!-- Brand Info -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-pink-500 flex items-center justify-center text-white font-bold">R</div>
+                    <span class="text-xl font-black text-white tracking-wider">RDD'S TRADER</span>
+                </div>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    Pakistan's leading custom LED neon sign and acrylic decor studio. Light up your home, bedroom, office, or event.
+                </p>
+                <!-- Social Links -->
+                <div class="flex items-center space-x-3 pt-2">
+                    <a href="https://wa.me/923042178799" target="_blank" class="w-9 h-9 rounded-xl bg-gray-800 hover:bg-emerald-600 text-gray-300 hover:text-white flex items-center justify-center transition" title="WhatsApp">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </a>
+                    <a href="https://www.facebook.com/RDds1995" target="_blank" class="w-9 h-9 rounded-xl bg-gray-800 hover:bg-blue-600 text-gray-300 hover:text-white flex items-center justify-center transition" title="Facebook">
+                        <i class="fa-brands fa-facebook-f text-base"></i>
+                    </a>
+                    <a href="https://www.instagram.com/rdds.enterprises/" target="_blank" class="w-9 h-9 rounded-xl bg-gray-800 hover:bg-pink-600 text-gray-300 hover:text-white flex items-center justify-center transition" title="Instagram">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </a>
+                    <a href="mailto:Rdds.enetrprises@gmail.com" class="w-9 h-9 rounded-xl bg-gray-800 hover:bg-amber-600 text-gray-300 hover:text-white flex items-center justify-center transition" title="Email">
+                        <i class="fa-solid fa-envelope text-base"></i>
+                    </a>
+                </div>
+            </div>
 
-      cartBtn.addEventListener('click', openCartDrawer);
-      mobileCartBtn.addEventListener('click', openCartDrawer);
-      closeCartBtn.addEventListener('click', closeCartDrawer);
-      cartBackdrop.addEventListener('click', closeCartDrawer);
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Customizers</h4>
+                <ul class="space-y-2.5 text-xs">
+                    <li><button onclick="navigateTo('couple-customizer')" class="hover:text-pink-400 transition">Couple Name Neon Studio</button></li>
+                    <li><button onclick="navigateTo('text-customizer')" class="hover:text-pink-400 transition">Custom Text Neon Maker</button></li>
+                    <li><button onclick="navigateTo('home', 'categories')" class="hover:text-pink-400 transition">Islamic Acrylic Art</button></li>
+                    <li><button onclick="navigateTo('home', 'catalog')" class="hover:text-pink-400 transition">Anime &amp; Gaming Signs</button></li>
+                </ul>
+            </div>
 
-      // WhatsApp Checkout Link Generation
-      whatsappCheckoutBtn.addEventListener('click', () => {
-        if (cart.length === 0) {
-          alert('Your cart is empty!');
-          return;
-        }
+            <!-- Social & Connect -->
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Connect With Us</h4>
+                <div class="space-y-2.5 text-xs">
+                    <a href="https://wa.me/923042178799?text=Hi%20RDD's%20Trader!" target="_blank" class="flex items-center gap-2 p-2 rounded-xl bg-gray-900 border border-gray-800 hover:border-emerald-500 text-gray-300 hover:text-white transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                        <span>WhatsApp Direct Chat</span>
+                    </a>
+                    <a href="https://www.facebook.com/RDds1995" target="_blank" class="flex items-center gap-2 p-2 rounded-xl bg-gray-900 border border-gray-800 hover:border-blue-500 text-gray-300 hover:text-white transition">
+                        <i class="fa-brands fa-facebook text-blue-400 text-base"></i>
+                        <span>Facebook Page</span>
+                    </a>
+                    <a href="https://www.instagram.com/rdds.enterprises/" target="_blank" class="flex items-center gap-2 p-2 rounded-xl bg-gray-900 border border-gray-800 hover:border-pink-500 text-gray-300 hover:text-white transition">
+                        <i class="fa-brands fa-instagram text-pink-400 text-base"></i>
+                        <span>Instagram Profile</span>
+                    </a>
+                    <a href="mailto:Rdds.enetrprises@gmail.com" class="flex items-center gap-2 p-2 rounded-xl bg-gray-900 border border-gray-800 hover:border-amber-500 text-gray-300 hover:text-white transition">
+                        <i class="fa-solid fa-envelope text-amber-400 text-base"></i>
+                        <span>Rdds.enetrprises@gmail.com</span>
+                    </a>
+                </div>
+            </div>
 
-        let message = `*NEW ORDER - RDD's TRADER*\n\n`;
-        cart.forEach((item, idx) => {
-          message += `${idx + 1}. *${item.name}*\n`;
-          if (item.details) message += `   Details: ${item.details}\n`;
-          message += `   Qty: ${item.quantity} x Rs. ${item.price.toLocaleString()}\n\n`;
+            <!-- Payment Badges -->
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Delivery &amp; Payment</h4>
+                <div class="space-y-2 text-xs">
+                    <p class="bg-gray-900 p-2.5 rounded-xl border border-gray-800 flex items-center gap-2">
+                        <i class="fa-solid fa-money-bill-wave text-emerald-400"></i> Cash On Delivery (COD)
+                    </p>
+                    <p class="bg-gray-900 p-2.5 rounded-xl border border-gray-800 flex items-center gap-2">
+                        <i class="fa-solid fa-truck text-cyan-400"></i> Pakistan Wide Fast Shipping
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-900 pt-6 text-center text-xs text-gray-500">
+            <p>&copy; 2026 RDD'S TRADER. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                id: 'p1',
+                title: 'Ayat-ul-Kursi Frame',
+                category: 'Acrylic Sign',
+                price: 5500,
+                image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&auto=format&fit=crop&q=80',
+                badge: 'Best Seller'
+            },
+            {
+                id: 'p2',
+                title: 'Gamer Zone Controller Light',
+                category: 'Neon Sign',
+                price: 4200,
+                image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80',
+                badge: 'Trending'
+            },
+            {
+                id: 'p3',
+                title: 'Custom Couple Name Glow Board',
+                category: 'Neon Sign',
+                price: 6500,
+                image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&auto=format&fit=crop&q=80',
+                badge: 'Popular'
+            },
+            {
+                id: 'p4',
+                title: 'Bismillah Islamic Calligraphy',
+                category: 'Acrylic Sign',
+                price: 4800,
+                image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&auto=format&fit=crop&q=80',
+                badge: 'New'
+            },
+            {
+                id: 'p5',
+                title: 'Aesthetic Neon Wall Clock',
+                category: 'Neon Sign',
+                price: 3800,
+                image: 'https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=600&auto=format&fit=crop&q=80',
+                badge: 'Hot'
+            },
+            {
+                id: 'p6',
+                title: 'MashAllah Glowing Acrylic Art',
+                category: 'Acrylic Sign',
+                price: 4500,
+                image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&auto=format&fit=crop&q=80',
+                badge: 'Popular'
+            }
+        ];
+
+        let activeCategoryFilter = 'All';
+        let cart = [];
+        let currentCheckoutPayload = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCatalog();
+            initCoupleCustomizer();
+            initTextCustomizer();
+            initMobileMenu();
+            initCartDrawer();
+            initCheckoutModal();
         });
 
-        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        message += `*TOTAL AMOUNT: Rs. ${total.toLocaleString()}*\n`;
-        message += `\nPlease confirm my order details and payment methods (Cash on Delivery).`;
+        function navigateTo(pageTarget, sectionId = null) {
+            // Hide all page views
+            document.querySelectorAll('.page-view').forEach(p => p.classList.add('hidden'));
 
-        const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/923001234567?text=${encodedMessage}`, '_blank');
-      });
-    }
+            // Find target page view
+            const pageElem = document.getElementById('page-' + pageTarget);
+            if (pageElem) {
+                pageElem.classList.remove('hidden');
+            }
 
-    function openCartDrawer() {
-      cartDrawer.classList.remove('pointer-events-none', 'opacity-0');
-      cartDrawer.classList.add('opacity-100');
-      cartPanel.classList.remove('translate-x-full');
-    }
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) mobileMenu.classList.add('hidden');
 
-    function closeCartDrawer() {
-      cartPanel.classList.add('translate-x-full');
-      cartDrawer.classList.remove('opacity-100');
-      cartDrawer.classList.add('opacity-0', 'pointer-events-none');
-    }
+            // Scroll behavior
+            if (sectionId) {
+                setTimeout(() => {
+                    const sectionElem = document.getElementById(sectionId);
+                    if (sectionElem) {
+                        sectionElem.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 50);
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
 
-    function initHeaderEvents() {
-      // Mobile Drawer Toggle
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+        // Category Filtering
+        function filterCategory(cat) {
+            activeCategoryFilter = cat;
+            renderCatalog();
+            navigateTo('home', 'catalog');
+        }
 
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenuDrawer.classList.toggle('hidden');
-      });
+        function renderCatalog() {
+            const grid = document.getElementById('product-grid');
+            const filteredProducts = activeCategoryFilter === 'All' 
+                ? products 
+                : products.filter(p => p.category === activeCategoryFilter);
 
-      // Search Overlay Toggle
-      const searchToggleBtn = document.getElementById('searchToggleBtn');
-      const searchOverlay = document.getElementById('searchOverlay');
-      const closeSearchBtn = document.getElementById('closeSearchBtn');
-      const searchInput = document.getElementById('searchInput');
+            ['All', 'Neon Sign', 'Acrylic Sign'].forEach(c => {
+                const btnId = c === 'All' ? 'btn-cat-all' : (c === 'Neon Sign' ? 'btn-cat-neon' : 'btn-cat-acrylic');
+                const btn = document.getElementById(btnId);
+                if (btn) {
+                    if (activeCategoryFilter === c) {
+                        btn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-pink-600 text-white';
+                    } else {
+                        btn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-gray-800 text-gray-300 hover:text-white';
+                    }
+                }
+            });
 
-      searchToggleBtn.addEventListener('click', () => {
-        searchOverlay.classList.remove('hidden');
-        searchInput.focus();
-      });
+            grid.innerHTML = filteredProducts.map(product => `
+                <div class="glass-card rounded-2xl overflow-hidden border border-gray-800 hover:border-pink-500/40 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-gray-800">
+                            <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/111827/ec4899?text=RDD+Sign'">
+                            <span class="absolute top-3 left-3 bg-pink-600/90 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md tracking-wider">${product.badge}</span>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[11px] font-semibold text-pink-400 uppercase tracking-wider">${product.category}</span>
+                            <h3 class="text-lg font-bold text-white mt-1">${product.title}</h3>
+                            <p class="text-xl font-black text-white mt-2">Rs. ${product.price.toLocaleString()}</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0 flex gap-2">
+                        <button onclick="addToCart('${product.id}')" class="flex-1 bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2.5 rounded-xl border border-gray-700 text-xs transition">
+                            <i class="fa-solid fa-plus mr-1"></i> Add To Bag
+                        </button>
+                        <button onclick="quickOrderCatalog('${product.id}')" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center transition">
+                            <i class="fa-brands fa-whatsapp text-lg mr-1"></i> Order
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
 
-      closeSearchBtn.addEventListener('click', () => {
-        searchOverlay.classList.add('hidden');
-      });
+        function quickOrderCatalog(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
 
-      // Realtime Product Search Filter
-      searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
-        const filtered = PRODUCTS.filter(p => 
-          p.name.toLowerCase().includes(query) || 
-          p.category.toLowerCase().includes(query)
-        );
-        renderProducts(filtered);
-      });
-    }
-  </script>
+            currentCheckoutPayload = {
+                type: 'Catalog Item',
+                title: product.title,
+                summaryHTML: `<strong>${product.title}</strong> - Rs. ${product.price.toLocaleString()}`,
+                totalPrice: product.price,
+                details: `Catalog Product: ${product.title}`
+            };
+
+            openCheckoutModal();
+        }
+
+        function initCoupleCustomizer() {
+            const name1Input = document.getElementById('couple-name1');
+            const name2Input = document.getElementById('couple-name2');
+            const previewName1 = document.getElementById('preview-name1');
+            const previewName2 = document.getElementById('preview-name2');
+            const previewConnector = document.getElementById('preview-connector');
+            const fontSelect = document.getElementById('couple-font');
+            const backingSelect = document.getElementById('couple-backing');
+            const priceDisplay = document.getElementById('couple-price-display');
+            const sizeBadge = document.getElementById('couple-size-badge');
+            const dimPreview = document.getElementById('preview-dim');
+            const backingPreview = document.getElementById('preview-backing');
+
+            let selectedConnector = '&';
+            let selectedColorClass = 'glow-pink';
+            let selectedColorName = 'Neon Pink';
+            let selectedSize = 'Medium (3 Feet)';
+            let selectedPrice = 6500;
+
+            function updateNames() {
+                previewName1.textContent = name1Input.value.trim() || 'Danish';
+                previewName2.textContent = name2Input.value.trim() || 'Anum';
+            }
+
+            name1Input.addEventListener('input', updateNames);
+            name2Input.addEventListener('input', updateNames);
+
+            fontSelect.addEventListener('change', (e) => {
+                const newFont = e.target.value;
+                previewName1.className = `text-4xl sm:text-5xl ${newFont} ${selectedColorClass}`;
+                previewName2.className = `text-4xl sm:text-5xl ${newFont} ${selectedColorClass}`;
+            });
+
+            document.querySelectorAll('.connector-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.connector-btn').forEach(b => {
+                        b.classList.remove('border-pink-500', 'bg-pink-500/20', 'text-white');
+                        b.classList.add('border-gray-700', 'bg-gray-900', 'text-gray-300');
+                    });
+                    this.classList.remove('border-gray-700', 'bg-gray-900', 'text-gray-300');
+                    this.classList.add('border-pink-500', 'bg-pink-500/20', 'text-white');
+                    selectedConnector = this.dataset.connector;
+                    previewConnector.textContent = selectedConnector;
+                });
+            });
+
+            document.querySelectorAll('.couple-color-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.couple-color-btn').forEach(b => b.classList.remove('border-pink-500', 'border-white', 'scale-110'));
+                    this.classList.add('border-white', 'scale-110');
+                    selectedColorClass = this.dataset.color;
+                    selectedColorName = this.dataset.name;
+
+                    const fontClass = fontSelect.value;
+                    previewName1.className = `text-4xl sm:text-5xl ${fontClass} ${selectedColorClass}`;
+                    previewName2.className = `text-4xl sm:text-5xl ${fontClass} ${selectedColorClass}`;
+                });
+            });
+
+            document.querySelectorAll('.couple-size-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.couple-size-btn').forEach(b => {
+                        b.classList.remove('border-pink-500', 'bg-pink-500/20', 'text-white', 'font-semibold');
+                        b.classList.add('border-gray-700', 'bg-gray-900', 'text-gray-300');
+                    });
+                    this.classList.remove('border-gray-700', 'bg-gray-900', 'text-gray-300');
+                    this.classList.add('border-pink-500', 'bg-pink-500/20', 'text-white', 'font-semibold');
+
+                    selectedSize = this.dataset.size;
+                    selectedPrice = parseInt(this.dataset.price);
+                    priceDisplay.textContent = `Rs. ${selectedPrice.toLocaleString()}`;
+                    sizeBadge.textContent = selectedSize;
+                    dimPreview.textContent = this.dataset.dim;
+                });
+            });
+
+            backingSelect.addEventListener('change', (e) => {
+                backingPreview.textContent = e.target.value;
+            });
+
+            document.getElementById('order-couple-btn').addEventListener('click', () => {
+                const name1 = name1Input.value.trim() || 'Danish';
+                const name2 = name2Input.value.trim() || 'Anum';
+                const backing = backingSelect.value;
+
+                currentCheckoutPayload = {
+                    type: 'Custom Couple Neon Sign',
+                    title: `Couple Sign: ${name1} ${selectedConnector} ${name2}`,
+                    summaryHTML: `<strong>Couple Sign:</strong> ${name1} ${selectedConnector} ${name2}<br>
+                                  <strong>Color:</strong> ${selectedColorName} | <strong>Size:</strong> ${selectedSize}<br>
+                                  <strong>Backing:</strong> ${backing}`,
+                    totalPrice: selectedPrice,
+                    details: `Couple Name Sign (${name1} ${selectedConnector} ${name2}), Color: ${selectedColorName}, Size: ${selectedSize}, Backing: ${backing}`
+                };
+
+                openCheckoutModal();
+            });
+        }
+
+        function initTextCustomizer() {
+            const textInput = document.getElementById('single-text-input');
+            const previewText = document.getElementById('single-text-preview');
+            const fontSelect = document.getElementById('single-text-font');
+            const priceDisplay = document.getElementById('single-text-price');
+            const sizeBadge = document.getElementById('text-size-badge');
+
+            let selectedColorClass = 'glow-cyan';
+            let selectedColorName = 'Ice Cyan';
+            let selectedSize = '2 Feet';
+            let selectedPrice = 4800;
+
+            textInput.addEventListener('input', () => {
+                previewText.textContent = textInput.value.trim() || 'Your Text';
+            });
+
+            fontSelect.addEventListener('change', (e) => {
+                previewText.className = `text-4xl sm:text-6xl ${e.target.value} ${selectedColorClass}`;
+            });
+
+            document.querySelectorAll('.text-color-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.text-color-btn').forEach(b => b.classList.remove('border-white', 'scale-110'));
+                    this.classList.add('border-white', 'scale-110');
+                    selectedColorClass = this.dataset.color;
+                    selectedColorName = this.dataset.name;
+                    previewText.className = `text-4xl sm:text-6xl ${fontSelect.value} ${selectedColorClass}`;
+                });
+            });
+
+            document.querySelectorAll('.text-size-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.text-size-btn').forEach(b => {
+                        b.classList.remove('border-cyan-400', 'bg-cyan-400/20', 'text-white', 'font-semibold');
+                        b.classList.add('border-gray-700', 'bg-gray-900', 'text-gray-300');
+                    });
+                    this.classList.remove('border-gray-700', 'bg-gray-900', 'text-gray-300');
+                    this.classList.add('border-cyan-400', 'bg-cyan-400/20', 'text-white', 'font-semibold');
+
+                    selectedSize = this.dataset.size;
+                    selectedPrice = parseInt(this.dataset.price);
+                    priceDisplay.textContent = `Rs. ${selectedPrice.toLocaleString()}`;
+                    sizeBadge.textContent = `${selectedSize} Size`;
+                });
+            });
+
+            document.getElementById('order-text-btn').addEventListener('click', () => {
+                const text = textInput.value.trim() || 'Good Vibes Only';
+
+                currentCheckoutPayload = {
+                    type: 'Custom Text Neon Sign',
+                    title: `Text Sign: "${text}"`,
+                    summaryHTML: `<strong>Text:</strong> "${text}"<br>
+                                  <strong>Color:</strong> ${selectedColorName} | <strong>Size:</strong> ${selectedSize}`,
+                    totalPrice: selectedPrice,
+                    details: `Single Text Sign ("${text}"), Color: ${selectedColorName}, Size: ${selectedSize}`
+                };
+
+                openCheckoutModal();
+            });
+        }
+
+        function initCartDrawer() {
+            const toggleBtn = document.getElementById('cart-toggle-btn');
+            const closeBtn = document.getElementById('cart-close-btn');
+            const backdrop = document.getElementById('cart-backdrop');
+            const drawer = document.getElementById('cart-drawer');
+
+            toggleBtn.addEventListener('click', () => drawer.classList.remove('hidden'));
+            closeBtn.addEventListener('click', () => drawer.classList.add('hidden'));
+            backdrop.addEventListener('click', () => drawer.classList.add('hidden'));
+
+            document.getElementById('cart-checkout-btn').addEventListener('click', () => {
+                if (cart.length === 0) return;
+
+                let summary = '';
+                let details = '';
+                let total = 0;
+
+                cart.forEach((item, idx) => {
+                    const itemTotal = item.price * item.qty;
+                    total += itemTotal;
+                    summary += `<div>• ${item.title} (x${item.qty}) - Rs. ${itemTotal.toLocaleString()}</div>`;
+                    details += `${idx + 1}. ${item.title} (x${item.qty}) - Rs. ${itemTotal.toLocaleString()}; `;
+                });
+
+                currentCheckoutPayload = {
+                    type: 'Shopping Bag Order',
+                    title: `Cart Checkout (${cart.length} items)`,
+                    summaryHTML: summary,
+                    totalPrice: total,
+                    details: details
+                };
+
+                drawer.classList.add('hidden');
+                openCheckoutModal();
+            });
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartUI();
+            document.getElementById('cart-drawer').classList.remove('hidden');
+        }
+
+        function updateCartUI() {
+            const cartContainer = document.getElementById('cart-items-container');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total-price');
+
+            const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
+            cartCount.textContent = totalItems;
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = `<p class="text-center text-gray-500 py-8 text-sm">Your bag is currently empty.</p>`;
+                cartTotal.textContent = `Rs. 0`;
+                return;
+            }
+
+            let total = 0;
+            cartContainer.innerHTML = cart.map((item) => {
+                const itemTotal = item.price * item.qty;
+                total += itemTotal;
+                return `
+                    <div class="flex items-center justify-between p-3 bg-gray-800/80 rounded-xl border border-gray-700">
+                        <div>
+                            <h4 class="text-sm font-bold text-white">${item.title}</h4>
+                            <p class="text-xs text-pink-400 font-semibold">Rs. ${item.price.toLocaleString()} x ${item.qty}</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="changeQty('${item.id}', -1)" class="w-7 h-7 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center">-</button>
+                            <span class="text-sm font-bold text-white">${item.qty}</span>
+                            <button onclick="changeQty('${item.id}', 1)" class="w-7 h-7 rounded-lg bg-gray-700 text-white font-bold flex items-center justify-center">+</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            cartTotal.textContent = `Rs. ${total.toLocaleString()}`;
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+            updateCartUI();
+        }
+
+        function openCheckoutModal() {
+            if (!currentCheckoutPayload) return;
+            document.getElementById('modal-order-summary').innerHTML = currentCheckoutPayload.summaryHTML;
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+
+        function initCheckoutModal() {
+            const modal = document.getElementById('checkout-modal');
+            const closeBtn = document.getElementById('close-checkout-modal');
+            const backdrop = document.getElementById('checkout-modal-backdrop');
+            const form = document.getElementById('customer-order-form');
+
+            function closeModal() { modal.classList.add('hidden'); }
+
+            closeBtn.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('cust-name').value.trim();
+                const phone = document.getElementById('cust-phone').value.trim();
+                const address = document.getElementById('cust-address').value.trim();
+
+                const newOrder = {
+                    id: 'RDD-' + Math.floor(100000 + Math.random() * 900000),
+                    date: new Date().toLocaleString('en-PK'),
+                    customerName: name,
+                    customerPhone: phone,
+                    customerAddress: address,
+                    itemType: currentCheckoutPayload.type,
+                    itemDetails: currentCheckoutPayload.details,
+                    totalPrice: currentCheckoutPayload.totalPrice,
+                    status: 'Pending'
+                };
+
+                saveOrderToAdmin(newOrder);
+
+                const waMessage = `Hi RDD's Trader! I would like to place an order.%0A%0A` +
+                                  `*Order ID:* #${newOrder.id}%0A` +
+                                  `*Customer Name:* ${encodeURIComponent(name)}%0A` +
+                                  `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                                  `*Delivery Address:* ${encodeURIComponent(address)}%0A%0A` +
+                                  `*Order Details:*%0A${encodeURIComponent(currentCheckoutPayload.details)}%0A%0A` +
+                                  `*Total Price:* Rs. ${currentCheckoutPayload.totalPrice.toLocaleString()}%0A%0A` +
+                                  `Please confirm my order!`;
+
+                closeModal();
+                form.reset();
+
+                if (currentCheckoutPayload.type === 'Shopping Bag Order') {
+                    cart = [];
+                    updateCartUI();
+                }
+
+                window.open(`https://wa.me/923042178799?text=${waMessage}`, '_blank');
+            });
+        }
+
+        function saveOrderToAdmin(order) {
+            let orders = JSON.parse(localStorage.getItem('rdds_admin_orders') || '[]');
+            orders.unshift(order);
+            localStorage.setItem('rdds_admin_orders', JSON.stringify(orders));
+        }
+
+        function initMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        }
+    </script>
 </body>
 </html>
